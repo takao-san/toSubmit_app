@@ -4,7 +4,7 @@
   <div class="row justify-content-center">
     <div class="col-4">
     <h1>好き嫌い　記録</h1>
-    <%= flash[:success] %>
+    <%= render "layouts/errormsg" %>
     <%= form_with(model: @check, local: true) do |f| %>
       <div class="mb-3">
         <%= f.label :product, "商品名" %>
