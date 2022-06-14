@@ -1,0 +1,12 @@
+  <% if @check.errors.any? %>
+  <div class="errormsg">
+    <ul>
+      <% @check.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+

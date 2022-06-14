@@ -8,17 +8,16 @@ class ChecksController < ApplicationController
   end
   
   def new
-    @check = Check.new(check_params)
+    @check = Check.new
   end
   
   def create
     @check = Check.create(check_params)
     if @check.save
-      flash[:success] = "好き嫌いが登録できました"
       redirect_to index_path
     else
-      flash[:danger] = "好き嫌いが登録できませんでした"
-      render "new"
+      flash[:danger] = @check.errors.full_messages
+      render "new", status: :unprocessable_entity
     end
   end  
   
@@ -40,6 +39,6 @@ class ChecksController < ApplicationController
   
   private 
     def check_params
-      params.permit(:product, :like, :text)
+      params.require(:check).permit(:product, :like, :text)
     end
 end

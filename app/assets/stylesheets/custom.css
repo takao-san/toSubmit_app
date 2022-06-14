@@ -2,3 +2,8 @@
   justify-content:flex-end;
   text-align: right;
 }
+
+.errormsg{
+  color: red;
+  margin: 0 0 30px 0;
+}
