@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: MyString
+  like: MyString
+  text: MyText
+  date: 2022-06-13
+
+two:
+  product: MyString
+  like: MyString
+  text: MyText
+  date: 2022-06-13

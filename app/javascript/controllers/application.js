@@ -7,3 +7,6 @@ application.debug = false
 window.Stimulus   = application
 
 export { application }
+//= require jquery
+//= require jquery3
+//= require jquery_ujs
