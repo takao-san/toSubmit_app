@@ -12,8 +12,11 @@
       </div>
     
       <div class="mb-3">
-        <%= f.label :like, "好き嫌い" %>
-        <%= f.text_field :like, class: 'form-control' %>
+        <%= f.label :like, "ご飯への食いつき度" %><br>
+        <%= f.select :like, [["よく食べる", "よく食べる"], 
+        ["あまり食べない", "あまり食べない"], 
+        ["まったく食べない", "まったく食べない"]], include_blank: "選択して下さい", 
+        class: 'form-control' %>
       </div>
       
       <div class="mb-3">
@@ -22,6 +25,6 @@
       </div>
       
     <%= f.submit value="登録", class: "btn btn-primary", id: "create-check" %>
-    <%= link_to "トップ画面に戻る", "/", class: "btn btn-light" %>
+    <%= link_to  "一覧画面に戻る", index_path, class: "btn btn-light" %>
     <% end %>
 </div>

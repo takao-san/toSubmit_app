@@ -1,6 +1,8 @@
 <%= render "layouts/header" %>
 
-<div class="container">
+<div class="container-md">
+  <%= render "layouts/flash" %>
+
   <div class="row justify-content-center">
     <div class="col-4">
       <div class="card" style="width: 18rem;">
@@ -9,11 +11,11 @@
       <%= image_tag @user.image_url, class: 'card-img-top', size: '300x200' %>
       
   <div class="card-body">
-    <h2 class="card-title"><%= @user.name %></h2>
+    <h2 class="card-title">ユーザーネーム：<br><%= @user.name %></h2>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">メールアドレス：<%= @user.email %></li>
-    <li class="list-group-item">愛犬猫の名前：×××</li>
+    <li class="list-group-item">メールアドレス：<br><%= @user.email %></li>
+    <li class="list-group-item">愛犬猫の名前：<br>×××</li>
   </ul>
   <div class="card-body">
     <%= link_to "編集する", edit_user_path %>

@@ -1,14 +1,17 @@
 <!--　　　画面共通のヘッダー　　　-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <!--ログインしている場合の画面-->
-<%#  <% if logged_in? %>
+  <% if logged_in? %>
     <%= link_to "【ロゴ】", "#", class: "btn btn-light" %>
-    <%= link_to "マイページ", "#", class: "btn btn-light" %>
-    <%= link_to "投稿作成", checks_new_path, class: "btn btn-light" %>
-    <%= link_to "ログアウト", "#",  data: { turbo_method: :delete },
+    <%= link_to "マイページ", "users/#{@current_user.id}", class: "btn btn-light" %>
+    <%= link_to "一覧画面", index_path, class: "btn btn-light" %>
+    <%= link_to "記録する", checks_new_path, class: "btn btn-light" %>
+    <%= link_to "ログアウト", logout_path,  data: { turbo_method: :delete },
     class: "btn btn-light" %>
+  <% else %>
     <%= link_to "新規登録", signup_path, class: "btn btn-light" %>
-    <%= link_to "ログイン", "#", class: "btn btn-light" %>
+    <%= link_to "ログイン", login_path, class: "btn btn-light" %>
+  <% end %>
 </nav>
 
 <!--ログアウト状態の画面-->

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   get 'users/new'
   get 'users/show'
   get 'users/edit'
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   
   # top画面
-  get "/", to: "checks#top"
+  get "/", to: "checks#top", as: "root"
   # インデックス画面
   get "/index", to: "checks#index"
   # 投稿作成
@@ -22,6 +23,10 @@ Rails.application.routes.draw do
   # 投稿削除
   delete "/checks/:id", to: "checks#destroy"
 
+  # ログイン ログアウト
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
   # user
   get "/signup", to: "users#new"
   resources :users

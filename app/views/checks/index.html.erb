@@ -1,26 +1,29 @@
 <%= render "layouts/header" %>
 
-<div class="container">
-    <% @checks.each do |check| %>  
+<div class="container-md">
+  <%= render "layouts/flash" %>
+  <% @checks.each do |check| %>  
   <div class="row">
-      <ul>
-        <li class="list-group-item list-group-item-light">
-          <div class="col-6">  
-            <%= check.product %>
-          </div>
-          <div class="col-6">  
-          <%= check.like %>
+    <ul>
+      <li class="list-group-item list-group-item-light">
+        <div class="col-6">  
+          <b><%= check.product %></b>
+        </div>
+        <div class="col-6-right-side"> 
+          <%= check.like %><br>
           <%= check.text %>
-          </div>
+        </div>
+  
         <div class="edit-del">
           <%= link_to "編集", "/checks/#{check.id}/edit" %>
           <%= link_to "削除", "/checks/#{check.id}", 
           data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %>
         </div>
-        </li>
-        <% end %>
-      </ul>
-    
+      </li>
+  <% end %>
+  </div>       
+        
+    </ul>
   </div>   
 </div>
   

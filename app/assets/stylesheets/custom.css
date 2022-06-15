@@ -1,9 +1,59 @@
+/* index-page */
 .edit-del{
   justify-content:flex-end;
   text-align: right;
 }
 
+.col-6-right-side{
+  display: inline-flex;
+  justify-content: flex-end;
+}
+
+
+.container-md{
+  max-width: 950px;
+}
+
+.col-6 {
+  display: inline-flex;
+  font-size: 20px;
+}
+
+/* error-msg*/
 .errormsg{
-  color: red;
+  color: #8E2800;
   margin: 0 0 30px 0;
+}
+
+.flash{
+  color: #8E2800;
+  text-align: center;
+}
+
+/* top-page */
+.top-page {
+    background-color: #B8C0D9;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding:0.5em 0 ;
+}
+.top-title {
+  text-align: center;
+}
+
+/* header */
+.navbar{
+  background-color: #FFF0A5;
+}
+
+.btn{
+  background-color: #FFF0A5;
+  color: #468966;
+}
+
+/* user-show page */
+.card-title{
+    font-size: 16px;
+    font-weight: normal;
 }

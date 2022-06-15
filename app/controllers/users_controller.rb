@@ -10,9 +10,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # log_in @user
+      log_in @user
       flash[:success] = "ユーザー登録ができました"
-      redirect_to index_path
+      redirect_to user_path
     else
       render "users/new", status: :unprocessable_entity
     end
