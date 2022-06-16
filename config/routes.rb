@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'users/new'
-  get 'users/show'
-  get 'users/edit'
+  # devise_for :users
+  # get 'sessions/new'
+  # get 'users/new'
+  # get 'users/show'
+  # get 'users/edit'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -30,4 +31,5 @@ Rails.application.routes.draw do
   # user
   get "/signup", to: "users#new"
   resources :users
+  
 end

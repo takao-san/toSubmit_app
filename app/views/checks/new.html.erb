@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-4">
-    <h1>好き嫌い　記録</h1>
+    <h1>記録する</h1>
     <%= render "layouts/errormsg" %>
     <%= form_with(model: @check, local: true) do |f| %>
       <div class="mb-3">
@@ -24,7 +24,7 @@
         <%= f.text_area :text, class: 'form-control' %>
       </div>
       
-    <%= f.submit value="登録", class: "btn btn-primary", id: "create-check" %>
+    <%= f.submit value="登録", class: "btn btn-light", id: "create-check" %>
     <%= link_to  "一覧画面に戻る", index_path, class: "btn btn-light" %>
     <% end %>
 </div>

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_14_081255) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_16_060258) do
+  create_table "animals", force: :cascade do |t|
+    t.string "nickname"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_animals_on_user_id"
+  end
+
   create_table "checks", force: :cascade do |t|
     t.string "product"
     t.string "like"
@@ -38,4 +46,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_14_081255) do
     t.string "image"
   end
 
+  add_foreign_key "animals", "users"
 end

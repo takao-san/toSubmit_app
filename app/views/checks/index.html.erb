@@ -1,6 +1,7 @@
 <%= render "layouts/header" %>
 
 <div class="container-md">
+  <h1>これまでの記録</h1>
   <%= render "layouts/flash" %>
   <% @checks.each do |check| %>  
   <div class="row">
@@ -15,8 +16,8 @@
         </div>
   
         <div class="edit-del">
-          <%= link_to "編集", "/checks/#{check.id}/edit" %>
-          <%= link_to "削除", "/checks/#{check.id}", 
+          <%= link_to "編集", "/checks/#{check.id}/edit", class: "btn btn-light" %>
+          <%= link_to "削除", "/checks/#{check.id}", class: "btn btn-light", 
           data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %>
         </div>
       </li>

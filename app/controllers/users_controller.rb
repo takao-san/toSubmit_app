@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "ユーザー登録ができました"
-      redirect_to user_path
+      redirect_to user_path(@user)
     else
       render "users/new", status: :unprocessable_entity
     end
