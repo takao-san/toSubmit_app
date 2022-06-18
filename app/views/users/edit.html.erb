@@ -1,38 +1,39 @@
-<%= render "layouts/header" %>
+<% provide(:title, "ユーザーの編集") %>
 
+<%= render "layouts/header" %>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-4">
-    <h1 class="create-user">ユーザー情報の編集</h1>
+    <h1 class="create-user">ユーザーの編集</h1>
     <%= render "layouts/error_user" %>
     <%= form_with(model: @user, local: true) do |f| %>
     
       <div class="mb-3">
         <%= f.label :image %>
-        <%= f.file_field :image, class: 'form-control', accept: 'image/*' %>
+        <%= f.file_field :image, class: "form-control", accept: 'image/*' %>
       </div>
       
       <div class="mb-3">
         <%= f.label :name, "ユーザー名" %>
-        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :name, class: "form-control" %>
       </div>
     
       <div class="mb-3">
         <%= f.label :email, "メールアドレス" %>
-        <%= f.email_field :email, class: 'form-control' %>
+        <%= f.email_field :email, class: "form-control", placeholder: "example@example.com" %>
       </div>
       
       <div class="mb-3">
         <%= f.label "パスワード" %>
-        <%= f.password_field :password, class: 'form-control' %>
+        <%= f.password_field :password, class: "form-control" %>
       </div>
       
       <div class="mb-3">
         <%= f.label "パスワード(確認)" %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
       </div>
       
-    <%= f.submit value="編集", class: "btn btn-primary", id: "create-user" %>
-    <%= link_to "トップ画面に戻る", index_path, class: "btn btn-light" %>
+    <%= f.submit value="編集", class: "btn btn-light" %>
+    <%= link_to "トップ画面に戻る", index_path, class: "btn btn-secondary" %>
     <% end %>
 </div>

@@ -1,3 +1,4 @@
+<% provide(:title, "新規登録") %>
 <%= render "layouts/header" %>
 
 <div class="container">
@@ -7,31 +8,32 @@
     <%= render "layouts/error_user" %>
     <%= form_with(model: @user, local: true) do |f| %>
       <div class="mb-3">
-        <%= f.label :image %>
-        <%= f.file_field :image, class: 'form-control', accept: 'image/*' %>
+        <%= f.label :image, "プロフィール画像" %>
+        <%= f.file_field :image, class: "form-control", accept: 'image/*' %>
       </div>
 
       <div class="mb-3">
-        <%= f.label :name, "ユーザー名" %>
-        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.label :name, "ユーザー名", placeholder: "(例)山田太郎" %>
+        <%= f.text_field :name, class: "form-control"%>
       </div>
     
       <div class="mb-3">
         <%= f.label :email, "メールアドレス" %>
-        <%= f.email_field :email, class: 'form-control' %>
+        <%= f.email_field :email, class: "form-control", placeholder: "example@example.com" %>
       </div>
       
       <div class="mb-3">
         <%= f.label "パスワード" %>
-        <%= f.password_field :password, class: 'form-control' %>
+        <%= f.password_field :password, class: "form-control" %>
       </div>
       
       <div class="mb-3">
         <%= f.label "パスワード(確認)" %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <%= f.password_field :password_confirmation, class: "form-control", 
+        placeholder: "再度パスワードを入力してください" %>
       </div>
       
     <%= f.submit value="登録", class: "btn btn-light", id: "create-user" %>
-    <%= link_to "トップ画面に戻る", root_path, class: "btn btn-light" %>
+    <%= link_to "トップ画面に戻る", root_path, class: "btn btn-secondary" %>
     <% end %>
 </div>

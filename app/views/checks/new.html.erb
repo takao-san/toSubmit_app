@@ -1,5 +1,6 @@
-<%= render "layouts/header" %>
+<% provide(:title, "記録作成") %>
 
+<%= render "layouts/header" %>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-4">
@@ -8,7 +9,7 @@
     <%= form_with(model: @check, local: true) do |f| %>
       <div class="mb-3">
         <%= f.label :product, "商品名" %>
-        <%= f.text_field :product, class: 'form-control' %>
+        <%= f.text_field :product, class: "form-control", placeholder: "(例)〇×キャットフード" %>
       </div>
     
       <div class="mb-3">
@@ -16,15 +17,15 @@
         <%= f.select :like, [["よく食べる", "よく食べる"], 
         ["あまり食べない", "あまり食べない"], 
         ["まったく食べない", "まったく食べない"]], include_blank: "選択して下さい", 
-        class: 'form-control' %>
+        class: "form-control" %>
       </div>
       
       <div class="mb-3">
         <%= f.label :text, "ひとこと" %>
-        <%= f.text_area :text, class: 'form-control' %>
+        <%= f.text_area :text, class: "form-control", placeholder: "(例)良く食べる。また買いに行く。" %>
       </div>
       
     <%= f.submit value="登録", class: "btn btn-light", id: "create-check" %>
-    <%= link_to  "一覧画面に戻る", index_path, class: "btn btn-light" %>
+    <%= link_to  "一覧画面に戻る", index_path, class: "btn btn-secondary" %>
     <% end %>
 </div>

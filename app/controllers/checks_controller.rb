@@ -15,6 +15,7 @@ class ChecksController < ApplicationController
     @check = Check.create(check_params)
     if @check.save
       redirect_to index_path
+      flash[:success] = "記録を作成しました"
     else
       flash[:danger] = @check.errors.full_messages
       render "new", status: :unprocessable_entity
@@ -23,6 +24,7 @@ class ChecksController < ApplicationController
   
   def edit
     @check = Check.find(params[:id])
+    flash[:success] = "記録を編集しました"
   end
   
   def update

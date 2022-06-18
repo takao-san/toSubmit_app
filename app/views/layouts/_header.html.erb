@@ -1,9 +1,25 @@
-<!--　　　画面共通のヘッダー　　　-->
-<nav class="navbar navbar-expand-lg header-navbar">
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg header-navbar ">
   <!--ログインしている場合の画面-->
   <% if logged_in? %>
-    <%= link_to "【ロゴ】", "#", class: "btn btn-light" %>
-    <%= link_to "マイページ", "users/#{@current_user.id}", class: "btn btn-light" %>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="レスポンシブ・ナビゲーションバー">
+    <span class="navbar-toggler-icon">
+      <div></div>
+      <div></div>
+      <div></div>
+    </span>
+  </button>
+  <div class="collapse navbar-collapse" id="Navber">
+    <%= link_to "マイページ：#{@current_user.name}", "/users/#{@current_user.id}", class: "btn btn-light" %>
     <%= link_to "一覧画面", index_path, class: "btn btn-light" %>
     <%= link_to "記録する", checks_new_path, class: "btn btn-light" %>
     <%= link_to "ログアウト", logout_path,  data: { turbo_method: :delete },
@@ -12,11 +28,11 @@
     <%= link_to "新規登録", signup_path, class: "btn btn-light" %>
     <%= link_to "ログイン", login_path, class: "btn btn-light" %>
   <% end %>
+  </div>
 </nav>
 
-<!--ログアウト状態の画面-->
-<%#<nav class="navbar navbar-expand-lg navbar-light bg-light">    
-<%#  <% else %>
-<%#    <%= link_to "新規登録", "#", class: "btn btn-light" %>
-<%#    <%= link_to "ログイン", "#", class: "btn btn-light" %>
-<%#  <% end %>   
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
